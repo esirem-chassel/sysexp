@@ -14,6 +14,7 @@ L'activation de SSH dans Pi se fait via une interface de configuration intégré
 > - activer le serveur SSH et le demon SSHD associé
 > - ouvrir les ports concernés
 > - autoriser la connexion pour le service (notemment auprès de apparmor)
+>
 > Dans un milieu de production "réel", ce sont autant d'éléments à vérifier !
 
 > [!Important]
@@ -46,6 +47,7 @@ Sur votre machine locale, créez un fichier "test.txt" contenant une chaîne que
 > - on peut préciser, devant la source et/ou la destination l'user et l'IP, comme pour une connexion SSH (auquel cas on rajoute un deux points)
 > - si aucun identifiant SSH n'est précisé dans la source, la source est locale
 > - si aucun idetifiant SSH n'est précisé dans la destination, la destination est locale
+> 
 > Voyez donc SCP comme un simple `cp` mais capable de le faire à travers SSH !
 
 **Envoyez le fichier `test.txt` depuis votre poste local vers le dossier `/tmp` de votre PI.**
@@ -101,6 +103,7 @@ Connectez-vous en tant que superadmin.
 > Pour rappel:
 > - `su` permet de changer d'utilisateur. Si aucun utilisateur n'est précisé, on considère `root`.
 > - `sudo` permet de demander au superadmin de réaliser une commande. Nécessite de saisir son propre mot de passe et d'être dans le groupe `sudoers`
+> 
 > Donc, `sudo su` permet de basculer en root !
 
 ### useradd vs adduser
