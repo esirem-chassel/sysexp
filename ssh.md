@@ -97,7 +97,7 @@ Copiez la clef publique vers la machine distante : `ssh-copy-id <user>@<ip>`.
 
 Connectez-vous en tant que superadmin.
 
-> [!Info]
+> [!Tip]
 > Pour rappel:
 > - `su` permet de changer d'utilisateur. Si aucun utilisateur n'est précisé, on considère `root`.
 > - `sudo` permet de demander au superadmin de réaliser une commande. Nécessite de saisir son propre mot de passe et d'être dans le groupe `sudoers`
