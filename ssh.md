@@ -54,6 +54,45 @@ Sur votre machine locale, créez un fichier "test.txt" contenant une chaîne que
 
 **En saisissant la commande sur votre poste local, récupérez le fichier `hello_<nom>.txt` depuis le PI vers votre poste local.**
 
+## Gestion utilisateurs
+
+Connectez-vous en tant que superadmin.
+
+> [!Tip]
+> Pour rappel:
+> - `su` permet de changer d'utilisateur. Si aucun utilisateur n'est précisé, on considère `root`.
+> - `sudo` permet de demander au superadmin de réaliser une commande. Nécessite de saisir son propre mot de passe et d'être dans le groupe `sudoers`
+> 
+> Donc, `sudo su` permet de basculer en root !
+
+### useradd vs adduser
+
+Créez un nouvel utilisateur `test` via `useradd`. Vérifiez l'existence du dossier utilisateur `/home/useradd`. Que constatez-vous ?
+
+Créez un nouvel utilisateur `trainee` via `adduser`. Que constatez-vous ?
+
+### Opérations courantes
+
+Supprimez l'utilisateur `test`.
+
+Changez le mot de passe de l'utilisateur `trainee` : `passwd trainee`.
+
+Testez la connexion SSH à cet utilisateur.
+
+Ajoutez cet utilisateur au groupe `sudoers` : `usermod -aG sudo trainee`.
+
+**Quels sont ces arguments dans usermod ? A quoi sert usermod ?**
+
+Basculez sur l'utilisateur `trainee`.
+
+### Permissions
+
+Créez un dossier `/home/shared`. Quels sont ses droits ?
+
+**Via `chmod` et `chown`, permettez à la fois votre utilisateur et `trainee` d'accéder en lecture, écriture (et exploration) à ce dossier, mais aucun droit pour les autres.**
+
+Testez vos modifications !
+
 ## rsync
 
 Rsync est l'évolution de SCP. Rsync permet une synchronisation "intelligente" de fichiers et dossiers.
@@ -94,45 +133,6 @@ Copiez la clef publique vers la machine distante : `ssh-copy-id <user>@<ip>`.
 > Ce qui signifie que vous avez bien besoin de vous connecter avec votre mot de passe à ce moment précis.
 
 **Lancez une nouvelle connexion SSH. Si tout fonctionne comme prévu, aucun mot de passe ne vous sera demandé !**
-
-## Gestion utilisateurs
-
-Connectez-vous en tant que superadmin.
-
-> [!Tip]
-> Pour rappel:
-> - `su` permet de changer d'utilisateur. Si aucun utilisateur n'est précisé, on considère `root`.
-> - `sudo` permet de demander au superadmin de réaliser une commande. Nécessite de saisir son propre mot de passe et d'être dans le groupe `sudoers`
-> 
-> Donc, `sudo su` permet de basculer en root !
-
-### useradd vs adduser
-
-Créez un nouvel utilisateur `test` via `useradd`. Vérifiez l'existence du dossier utilisateur `/home/useradd`. Que constatez-vous ?
-
-Créez un nouvel utilisateur `trainee` via `adduser`. Que constatez-vous ?
-
-### Opérations courantes
-
-Supprimez l'utilisateur `test`.
-
-Changez le mot de passe de l'utilisateur `trainee` : `passwd trainee`.
-
-Testez la connexion SSH à cet utilisateur.
-
-Ajoutez cet utilisateur au groupe `sudoers` : `usermod -aG sudo trainee`.
-
-**Quels sont ces arguments dans usermod ? A quoi sert usermod ?**
-
-Basculez sur l'utilisateur `trainee`.
-
-### Permissions
-
-Créez un dossier `/home/shared`. Quels sont ses droits ?
-
-**Via `chmod` et `chown`, permettez à la fois votre utilisateur et `trainee` d'accéder en lecture, écriture (et exploration) à ce dossier, mais aucun droit pour les autres.**
-
-Testez vos modifications !
 
 ## Cas complet
 
