@@ -46,7 +46,7 @@ Sur votre machine locale, créez un fichier "test.txt" contenant une chaîne que
 > - le second argument est la destination
 > - on peut préciser, devant la source et/ou la destination l'user et l'IP, comme pour une connexion SSH (auquel cas on rajoute un deux points)
 > - si aucun identifiant SSH n'est précisé dans la source, la source est locale
-> - si aucun idetifiant SSH n'est précisé dans la destination, la destination est locale
+> - si aucun identifiant SSH n'est précisé dans la destination, la destination est locale
 > 
 > Voyez donc SCP comme un simple `cp` mais capable de le faire à travers SSH !
 
